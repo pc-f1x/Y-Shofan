@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#00A8E8">
 
 <title>תשלום מהיר ב-Bit</title>
 
 <style>
+
+/* ===== הגדרות כלליות ===== */
+
 * {
     box-sizing: border-box;
 }
@@ -15,131 +20,155 @@ body {
     margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eef7ff, #ffffff);
-    color: #243447;
+    background: linear-gradient(145deg, #e9f7ff, #ffffff);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #243447;
 }
+
+/* ===== כרטיס ראשי ===== */
 
 .container {
     width: 100%;
     max-width: 420px;
-    background: white;
-    padding: 30px 22px;
-    border-radius: 24px;
+    background: #ffffff;
+    padding: 32px 24px;
+    border-radius: 26px;
     text-align: center;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.09);
+    box-shadow: 0 15px 45px rgba(0, 70, 120, 0.10);
 }
 
-/* אזור הלוגו */
+/* ===== לוגו ===== */
 
 .logo {
-    width: 90px;
-    height: 90px;
+    width: 95px;
+    height: 95px;
     margin: 0 auto 20px;
     border-radius: 50%;
-    background: #e8f5ff;
+    background: #e8f7ff;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 42px;
+    align-items: center;
+    font-size: 44px;
+    overflow: hidden;
 }
 
-/* שם העסק */
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ===== כותרות ===== */
 
 h1 {
     font-size: 27px;
-    margin-bottom: 10px;
-    color: #172b4d;
+    margin: 0 0 10px;
+    color: #142d4e;
 }
 
 .subtitle {
-    font-size: 17px;
-    color: #65758b;
-    margin-bottom: 28px;
+    font-size: 16px;
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 26px;
 }
 
-/* מספר טלפון */
+/* ===== מספר הטלפון ===== */
 
 .phone-box {
-    background: #f3f9ff;
-    border: 2px dashed #2b9ed8;
-    border-radius: 15px;
-    padding: 18px;
+    background: #f1f9ff;
+    border: 2px dashed #29a7e1;
+    border-radius: 18px;
+    padding: 22px 15px;
     margin-bottom: 24px;
 }
 
 .phone-label {
-    font-size: 14px;
     color: #64748b;
-    margin-bottom: 8px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .phone-number {
-    font-size: 30px;
-    font-weight: bold;
-    color: #172b4d;
+    font-size: 31px;
+    font-weight: 800;
+    color: #16365a;
     direction: ltr;
+    letter-spacing: 1px;
 }
 
-/* כפתורים */
+/* ===== כפתורים ===== */
 
-button, .button {
+button {
     width: 100%;
-    display: block;
-    border: none;
-    border-radius: 14px;
     padding: 19px 12px;
+    border: none;
+    border-radius: 15px;
     font-size: 17px;
     font-weight: bold;
-    cursor: pointer;
-    margin-bottom: 14px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    text-decoration: none;
     font-family: inherit;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-button:active, .button:active {
+button:active {
     transform: scale(0.97);
 }
 
-.copy-btn {
-    background: #172b4d;
-    color: white;
-    box-shadow: 0 6px 15px rgba(23,43,77,0.2);
-}
+/* כפתור העתקה */
 
-.bit-btn {
+.copy-btn {
     background: #00a8e8;
     color: white;
-    box-shadow: 0 6px 18px rgba(0,168,232,0.25);
+    box-shadow: 0 7px 20px rgba(0,168,232,0.28);
+    margin-bottom: 13px;
 }
 
-/* הוראות */
+/* כפתור פתיחה */
+
+.bit-btn {
+    background: #16365a;
+    color: white;
+    box-shadow: 0 7px 18px rgba(22,54,90,0.20);
+}
+
+/* הודעת העתקה */
+
+.copy-success {
+    color: #159447;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 12px;
+    min-height: 20px;
+}
+
+/* ===== הוראות ===== */
 
 .instructions {
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 28px;
+    padding: 22px 18px;
+    border-radius: 18px;
     background: #f8fafc;
-    border-radius: 15px;
     text-align: right;
 }
 
 .instructions h3 {
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 18px;
+    margin: 0 0 20px;
     font-size: 18px;
+    color: #243447;
 }
 
 .step {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 15px;
-    font-size: 15px;
+    margin-bottom: 17px;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .step:last-child {
@@ -147,47 +176,31 @@ button:active, .button:active {
 }
 
 .step-number {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
     background: #00a8e8;
     color: white;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    align-items: center;
     font-weight: bold;
 }
 
-/* הודעת הצלחה */
-
-.toast {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #16a34a;
-    color: white;
-    padding: 14px 24px;
-    border-radius: 12px;
-    font-size: 16px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    z-index: 1000;
-    white-space: nowrap;
-}
-
-.toast.show {
-    opacity: 1;
-    visibility: visible;
-}
+/* ===== תחתית ===== */
 
 .footer {
-    margin-top: 22px;
+    margin-top: 25px;
     font-size: 12px;
     color: #94a3b8;
+}
+
+.small-note {
+    font-size: 12px;
+    color: #64748b;
+    margin-top: 14px;
+    line-height: 1.7;
 }
 
 </style>
@@ -197,59 +210,69 @@ button:active, .button:active {
 
 <div class="container">
 
-    <!-- ================================= -->
-    <!-- כאן ניתן להחליף את הלוגו של העסק -->
-    <!-- ================================= -->
+    <!-- ===== לוגו העסק ===== -->
 
-    <div class="logo">
+    <div class="logo" id="businessLogo">
         💳
     </div>
 
-    <!-- ================================= -->
-    <!-- כאן מחליפים את שם העסק -->
-    <!-- ================================= -->
+    <!-- ===== שם העסק ===== -->
 
     <h1 id="businessName"></h1>
 
     <div class="subtitle">
-        תשלום מהיר ונוח באמצעות Bit
+        תשלום מהיר, פשוט ונוח באמצעות Bit 💙
     </div>
+
+    <!-- ===== מספר הטלפון ===== -->
 
     <div class="phone-box">
 
         <div class="phone-label">
-            מספר הטלפון להעברה
+            מספר הטלפון להעברה ב-Bit
         </div>
 
         <div class="phone-number" id="phoneDisplay"></div>
 
     </div>
 
+    <!-- ===== כפתור העתקה ===== -->
+
     <button class="copy-btn" id="copyButton" onclick="copyPhone()">
-        1. לחצו להעתקת מספר ה-Bit
+        📋 1. לחצו להעתקת מספר ה-Bit
     </button>
 
-    <a href="#" class="button bit-btn" onclick="openBit(event)">
-        2. לחצו לפתיחת אפליקציית Bit
-    </a>
+    <div class="copy-success" id="copyMessage" role="status" aria-live="polite"></div>
+
+    <!-- ===== כפתור Bit ===== -->
+
+    <button class="bit-btn" onclick="openBit()">
+        📱 2. פתיחת Bit / התקנת האפליקציה
+    </button>
+
+    <div class="small-note">
+        אם Bit כבר מותקנת בטלפון, ניתן לפתוח אותה גם ישירות ממסך הבית.
+    </div>
+
+    <!-- ===== הוראות ===== -->
 
     <div class="instructions">
 
-        <h3>איך משלמים? פשוט מאוד!</h3>
+        <h3>איך משלמים? 💙</h3>
 
         <div class="step">
             <div class="step-number">1</div>
-            <span>לחצו על "העתק מספר"</span>
+            <span>לחצו על הכפתור להעתקת מספר הטלפון.</span>
         </div>
 
         <div class="step">
             <div class="step-number">2</div>
-            <span>לחצו על "פתח את Bit"</span>
+            <span>פתחו את אפליקציית Bit בטלפון.</span>
         </div>
 
         <div class="step">
             <div class="step-number">3</div>
-            <span>הדביקו את המספר באפליקציה ובצעו את ההעברה</span>
+            <span>בחרו בהעברת כסף, הדביקו את המספר והשלימו את התשלום.</span>
         </div>
 
     </div>
@@ -260,125 +283,186 @@ button:active, .button:active {
 
 </div>
 
-<div class="toast" id="toast" role="status" aria-live="polite">
-    ✓ המספר הועתק בהצלחה!
-</div>
-
 <script>
 
-/* ========================================== */
-/* כאן משנים את פרטי העסק                     */
-/* ========================================== */
+/* ========================================= */
+/*           הגדרות העסק                     */
+/* ========================================= */
 
-// החליפו בשם העסק שלכם
+// ✏️ כאן משנים את שם העסק
 const BUSINESS_NAME = "שופן עיצוב שיער";
 
-// החליפו במספר הטלפון המקושר לחשבון Bit
+// ✏️ כאן משנים את מספר הטלפון
 const BUSINESS_PHONE = "0537183809";
 
-/* ========================================== */
-/* אין צורך לשנות את הקוד מכאן והלאה          */
-/* ========================================== */
+// ✏️ לוגו העסק (לא חובה)
+// לדוגמה: "logo.png"
+// השאירו ריק כדי להציג את האייקון הרגיל
 
-document.getElementById("businessName").textContent = BUSINESS_NAME;
-
-document.getElementById("phoneDisplay").textContent = BUSINESS_PHONE;
+const BUSINESS_LOGO = "";
 
 
-/* העתקת מספר הטלפון */
+/* ========================================= */
+/*           קישורים ל-Bit                   */
+/* ========================================= */
+
+// קישור לאנדרואיד
+const ANDROID_BIT_URL =
+"https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp&gl=IL";
+
+// קישור לאייפון
+const IPHONE_BIT_URL =
+"https://apps.apple.com/us/app/bit-%D7%91%D7%99%D7%98/id1182007739";
+
+
+/* ========================================= */
+/*           טעינת פרטי העסק                 */
+/* ========================================= */
+
+document.getElementById("businessName").textContent =
+    BUSINESS_NAME;
+
+document.getElementById("phoneDisplay").textContent =
+    BUSINESS_PHONE;
+
+
+// טעינת לוגו אם הוגדר
+
+if (BUSINESS_LOGO !== "") {
+
+    const logoContainer =
+        document.getElementById("businessLogo");
+
+    const logoImage = document.createElement("img");
+
+    logoImage.src = BUSINESS_LOGO;
+    logoImage.alt = "לוגו העסק";
+
+    logoContainer.textContent = "";
+    logoContainer.appendChild(logoImage);
+
+}
+
+
+/* ========================================= */
+/*           העתקת מספר הטלפון               */
+/* ========================================= */
 
 async function copyPhone() {
 
+    // הסרת מקפים ורווחים
     const phone = BUSINESS_PHONE.replace(/\D/g, "");
 
     let copied = false;
 
-    // שיטת העתקה מודרנית
+    // ניסיון העתקה מודרני
     if (navigator.clipboard && window.isSecureContext) {
 
         try {
+
             await navigator.clipboard.writeText(phone);
+
             copied = true;
-        } catch (err) {
-            console.log("Clipboard API failed:", err);
+
+        } catch (error) {
+
+            console.log("Clipboard API failed", error);
+
         }
+
     }
 
-    // שיטת גיבוי למכשירים ודפדפנים ישנים
+    // שיטת גיבוי לדפדפנים ישנים
     if (!copied) {
 
         const textArea = document.createElement("textarea");
 
         textArea.value = phone;
+
         textArea.setAttribute("readonly", "");
 
         textArea.style.position = "fixed";
-        textArea.style.top = "0";
         textArea.style.left = "0";
+        textArea.style.top = "0";
         textArea.style.opacity = "0";
 
         document.body.appendChild(textArea);
 
         textArea.focus();
         textArea.select();
+
         textArea.setSelectionRange(0, phone.length);
 
         try {
+
             copied = document.execCommand("copy");
-        } catch (err) {
+
+        } catch (error) {
+
             copied = false;
+
         }
 
         document.body.removeChild(textArea);
+
     }
+
+    const message =
+        document.getElementById("copyMessage");
+
+    const button =
+        document.getElementById("copyButton");
 
     if (copied) {
-        showToast();
+
+        message.style.color = "#159447";
+
+        message.textContent =
+            "✓ המספר הועתק בהצלחה!";
+
+        button.textContent =
+            "✓ המספר הועתק!";
+
+        setTimeout(() => {
+
+            button.textContent =
+                "📋 1. לחצו להעתקת מספר ה-Bit";
+
+        }, 3000);
+
     } else {
-        alert("לא ניתן להעתיק אוטומטית. אנא העתיקו את המספר ידנית.");
+
+        message.style.color = "#dc2626";
+
+        message.textContent =
+            "לא ניתן להעתיק אוטומטית. לחצו לחיצה ארוכה על המספר והעתיקו אותו.";
+
     }
+
 }
 
 
-/* הודעת הצלחה */
+/* ========================================= */
+/*           פתיחת עמוד Bit                  */
+/* ========================================= */
 
-let toastTimeout;
-
-function showToast() {
-
-    const toast = document.getElementById("toast");
-
-    toast.classList.add("show");
-
-    clearTimeout(toastTimeout);
-
-    toastTimeout = setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2500);
-}
-
-
-/* פתיחת Bit */
-
-function openBit(event) {
-
-    event.preventDefault();
+function openBit() {
 
     const userAgent = navigator.userAgent || "";
 
-    // מכשירי iPhone ו-iPad
-    if (/iPhone|iPad|iPod/i.test(userAgent)) {
+    // אייפון / אייפד
+    if (/iPhone|iPad|iPod/i.test(userAgent) ||
+        (navigator.platform === "MacIntel" &&
+         navigator.maxTouchPoints > 1)) {
 
-        window.location.href =
-            "https://apps.apple.com/il/app/bit/id1182007739";
+        window.location.href = IPHONE_BIT_URL;
 
     }
 
-    // מכשירי Android
+    // אנדרואיד
     else if (/Android/i.test(userAgent)) {
 
-        window.location.href =
-            "https://play.google.com/store/apps/details?id=com.bnhp.payments.paymentsapp";
+        window.location.href = ANDROID_BIT_URL;
 
     }
 
